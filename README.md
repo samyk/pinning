@@ -7,7 +7,7 @@
 ## Features
 * Removes ads/promoted content
 * Hotkeys
-  * '**S**' to Save pin
+	* '**S**' to Save pin
 	* '**L**' to Like/heart pin
 	* '**F**' to Forward pin
 	* '**V**' to Visit pin URL
