@@ -32,7 +32,7 @@
 * Install the [TamperMonkey](https://tampermonkey.net/) browser extension (available for Chrome, Edge, Safari, Firefox & Safari)
 * Click the TamperMonkey icon in the browser
 * Click "Add new script"
-* Paste the contents of [tampermonkey.js](https://raw.githubusercontent.com/samyk/pinning/master/pinning.js)
+* Paste the contents of [pinning.js](https://raw.githubusercontent.com/samyk/pinning/master/pinning.js)
 * Hit the Save button (or Cmd+S/Ctrl+S)
 * Reload any pinterest.com pages
 
