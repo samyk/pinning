@@ -7,20 +7,22 @@
 ## Features
 * Removes ads/promoted content
 * Hotkeys
+  * '**S**' to Save pin
+	* '**L**' to Like/heart pin
+	* '**F**' to Forward pin
+	* '**V**' to Visit pin URL
+	* '**Enter**' to Expand pin
+	* '**Escape**' to Escape expanded pin
 	* Use left/right arrow keys to traverse pins (in addition to standard hover)
-	* '**L**' to like/heart the selected pin
 
 ## Todo
-* Hotkeys
-	* 'P' (or S?) to save a pin
-	* 'F' to forward pin
 * When traversing, page should autoscroll to show full pin
-* When saving to board (hitting 'P' or **rolling over** 'Save' button), big div should **not** popup, instead a small rollover should display beneath Save button with list of all boards
+* When saving to board (hitting 'P' or **rolling over** 'Save' button), big modal should **not** popup, instead a small rollover should display beneath Save button with list of all boards
 	* Include typeahead and up/down arrow support
 	* Don't show duplicate boards
 	* Make the display small so you still see the rest of pins
 	* When finally saving, the save should happen in the background so you can immediately continue seeing pins
-* When Liking selected pin, show the like button (currently hidden as the pin is not actually in :hover state)  
+* When Liking selected pin, show the like button (currently hidden as the pin is not actually in :hover state)
 * Once in a good state, drop into its own extension
 
 ## Installation

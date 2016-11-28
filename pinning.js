@@ -9,8 +9,12 @@
 // @require https://code.jquery.com/jquery-3.1.1.min.js
 // ==/UserScript==
 
-var item;
+// On hover, data-is-hovering="true"
+
 (function() {
+    // currently selected item
+    var item;
+    
     // Remove ads/promoted content
     for (var x of document.getElementsByClassName('creditName'))
         if (x.innerText.indexOf('Promoted by') === 0)
@@ -20,17 +24,24 @@ var item;
         }
 
     // Add border to selected pin, remove border on previous
-    function setBorders(i, newItem)
+    function setBorders(newItem)
     {
         if (newItem)
         {
-            if (i) i.style.border='0px';
+            // Remove border from old item
+            if (item)
+            {
+                item.style.border = '0px';
+                item.setAttribute("data-is-hovering", "false");
+            }
+
             item = newItem;
+            item.setAttribute("data-is-hovering", "true");
             console.log(findPos(item), item);
-           // window.scroll(0, findPos(item));
+            // window.scroll(0, findPos(item));
             item.focus();
-            item.style.border='3px solid #cb2027';
-            item.style.borderRadius='10px';
+            item.style.border = '2px solid #cb2027';
+            item.style.borderRadius = '10px';
         }
     }
 
@@ -52,21 +63,38 @@ var item;
     // Find the item (pin) user is hovering mouse over
     window.onmouseover = function(e)
     {
-        setBorders(item, e.target.closest('.item'));
+        setBorders(e.target.closest('.item'));
     };
 
     // Hotkey support
-    $(window).keydown(function(e) {
-        switch (e.keyCode) {
-            case 76: // l
-            case 108: // L
+    $(window).keydown(function(e)
+    {
+        switch (e.keyCode)
+        {
+            case 76:  // L
+            case 108: // l
                 item.querySelectorAll('.LikeButton')[0].click();
                 break;
+            case 70:  // F
+            case 102: // f
+                item.querySelectorAll('.DropdownButton')[0].click();
+                break;
+            case 83:  // S
+            case 115: // s
+                item.querySelectorAll('.ShowModalButton')[0].click();
+                break;
+            case 86:  // V
+            case 118: // v
+                item.querySelectorAll('.NavigateButton')[0].click();
+                break;
+            case 13: // Enter
+                item.querySelectorAll('.pinImageWrapper')[0].click();
+                break;
             case 37: // left arrow
-                setBorders(item, item.previousElementSibling);
+                setBorders(item.previousElementSibling);
                 break;
             case 39: // right arrow
-                setBorders(item, item.nextElementSibling);
+                setBorders(item.nextElementSibling);
                 break;
         }
     });
