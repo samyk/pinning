@@ -15,7 +15,6 @@
 
 ## Todo
 * Add [Computer Vision API](https://www.microsoft.com/cognitive-services/en-us/Computer-Vision-API/documentation/DescribingImages) to automatically detect which board to pin to
-* Fix bug where you must click on the page before being able to use hotkeys
 * When traversing via arrowkeys, page should autoscroll to display full pin
 * When hovering over pin, page should autoscroll to display full pin
 * When saving to board (hitting 'S' or **rolling over** 'Save' button), big modal should **not** popup, instead a small rollover should display beneath Save button with list of all boards
@@ -28,7 +27,6 @@
 * When a pin is selected, show the buttons (currently hidden as the pin is not actually in :hover state)
 * Once in a good state, drop into its own extension
 * Remove the width from border around pins (outline vs border?)
-* Select the first item on the page by default
 
 ## Installation
 
