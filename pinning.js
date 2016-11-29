@@ -40,8 +40,14 @@
         {
             var tmp = x.closest('.item');
             if (tmp)
+            {
               tmp.style.visibility = 'hidden';
+              tmp.style.position   = 'absolute';
+            }
         }
+
+    // meh, until you detect height change
+    setTimeout(removeAds, 1000);
   }
 
   // Select a pin, add border to pin, remove border from previous
