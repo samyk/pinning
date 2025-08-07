@@ -1,10 +1,10 @@
 // ==UserScript==
 // @name         #PINNING
 // @namespace    https://sa.my
-// @version      0.1.1
+// @version      0.1.2
 // @description  #PINNING
 // @author       samy kamkar
-// @match        https://*.pinterest.com/
+// @match        https://*.pinterest.com/*
 // @grant        none
 // @require      https://code.jquery.com/jquery-3.1.1.min.js
 // ==/UserScript==
