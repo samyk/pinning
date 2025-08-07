@@ -1,10 +1,10 @@
 // ==UserScript==
 // @name         #PINNING
-// @namespace    https://samy.pl
-// @version      0.1
+// @namespace    https://sa.my
+// @version      0.1.1
 // @description  #PINNING
-// @author       Samy Kamkar
-// @match        https://www.pinterest.com/
+// @author       samy kamkar
+// @match        https://*.pinterest.com/
 // @grant        none
 // @require      https://code.jquery.com/jquery-3.1.1.min.js
 // ==/UserScript==
@@ -14,6 +14,7 @@
   var item;
 
   // setup
+  dontDarkenOnHover(); // don't darken images on hover
   removeAds();   // remove ads
   addHotkeys();  // add hotkeys to the page
   detectHover(); // select pin when hovered over
@@ -48,6 +49,15 @@
 
     // meh, until you detect height change
     setTimeout(removeAds, 1000);
+  }
+
+  // don't darken images when hovering, often i'm trying to inspect the colors closer
+  function dontDarkenOnHover()
+  {
+    var style = document.createElement('style');
+    style.type = 'text/css';
+    style.innerHTML = '.ojN { bottom: unset !important; }';
+    document.getElementsByTagName('head')[0].appendChild(style);
   }
 
   // Select a pin, add border to pin, remove border from previous
